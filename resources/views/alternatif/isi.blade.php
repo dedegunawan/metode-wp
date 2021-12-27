@@ -44,8 +44,8 @@
                                     <td>{{$kriteria['kode_kriteria']}} - {{$kriteria['nama_kriteria']}}</td>
                                     <td>
                                         @if($kriteria['tipe_kriteria']=='integer')
-                                            <input type="number" class="form-control" name="kriteria[{{$kriteria['id']}}]"
-                                                   placeholder="Isi dengan bilangan bulat" step="1" autocomplete="off" value="{{$pilihan['nilai']}}"
+                                            <input type="number" class="form-control" name="kriteria[{{@$kriteria['id']}}]"
+                                                   placeholder="Isi dengan bilangan bulat" step="1" autocomplete="off" value="{{@$pilihan['nilai']}}"
                                             >
                                         @elseif($kriteria['tipe_kriteria']=='float')
                                             <input type="number" class="form-control" name="kriteria[{{$kriteria['id']}}]"
@@ -55,8 +55,8 @@
                                             <select name="kriteria[{{$kriteria['id']}}]" class="form-control select2-kriteria" autocomplete="off">
                                                 <option value="">Pilih</option>
                                                 @foreach($kriteria['pilihan_kriteria'] as $pilihan_kriteria)
-                                                    <option value="{{$pilihan_kriteria['id']}}" {!! $pilihan_kriteria['id']== $pilihan['nilai'] ? 'selected="selected" ' : ''!!}>
-                                                        {{$pilihan_kriteria['nama_pilihan']}}
+                                                    <option value="{{@$pilihan_kriteria['id']}}" {!! @$pilihan_kriteria['id']== @$pilihan['nilai'] ? 'selected="selected" ' : ''!!}>
+                                                        {{@$pilihan_kriteria['nama_pilihan']}}
                                                     </option>
                                                 @endforeach
                                             </select>
