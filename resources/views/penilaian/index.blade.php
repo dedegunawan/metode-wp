@@ -117,7 +117,9 @@
 
                     <div class="m-5"></div>
 
-                    <h3 class="page-header">Hasil</h3>
+                    <h3 class="page-header">
+                        Hasil
+                    </h3>
                     <hr>
                     @php
                         $unsorted = @$penilaianService->getNormalizedVList();
@@ -151,7 +153,14 @@
                         </tbody>
                     </table>
 
-
+                    <div class="mt-2">
+                        <a href="?pdf" class="btn btn-xs btn-outline-primary mr-2" target="_blank">
+                            <i class="fa fa-print"></i> Cetak Perhitungan
+                        </a>
+                        <a href="?pdf=hanya_hasil" class="btn btn-xs btn-outline-primary" target="_blank">
+                            <i class="fa fa-print"></i> Cetak Hasil
+                        </a>
+                    </div>
 
                 </div>
             </div>

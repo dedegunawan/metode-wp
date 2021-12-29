@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\PenilaianService;
+use Barryvdh\DomPDF\Facade;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
 class PenilaianController extends Controller
@@ -13,14 +15,30 @@ class PenilaianController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(PenilaianService $penilaianService)
+    public function index(PenilaianService $penilaianService, Request $request)
     {
         if (!$penilaianService->valid()) {
             return view('penilaian.tidak_valid');
         }
 
+
+
         $penilaianService->hitungWp();
         $penilaianService->setNiceView();
+
+        if (
+            $request->has('pdf')
+        ) {
+            $pdf_option = $request->input('pdf');
+            $hanya_hasil = $pdf_option == 'hanya_hasil';
+            /** @var PDF $pdf */
+            $pdf = Facade::loadView(
+                $hanya_hasil ? 'penilaian.pdf_hasil' : 'penilaian.pdf',
+                compact('penilaianService', 'hanya_hasil')
+            );
+            return $pdf->stream('hasil-penilaian.pdf');
+        }
+
         return view('penilaian.index', compact('penilaianService'));
 
     }
