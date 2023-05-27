@@ -30,4 +30,4 @@ DB_PASSWORD=password_db_nya_biasanya_kosong
 ## Donasi
 Bantu saya untuk terus berkarya membuat aplikasi yang bermanfaat.
 
-![Saweria](https://saweria.co/widgets/qr?streamKey=c25865c08d0d7354551431e01826dac4)
+- Saweria - [https://saweria.co/veza](https://saweria.co/veza)
