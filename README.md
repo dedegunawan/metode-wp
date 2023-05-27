@@ -1,6 +1,6 @@
 ## Tutorial Lengkap Metode WP
 
-- [Contoh Metode WP](contoh-metode-weighted-product-wp)
+- [Contoh Metode WP](https://veza.co.id/contoh-metode-weighted-product-wp/)
 
 ## Cara Install
 
